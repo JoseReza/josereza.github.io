@@ -1,0 +1,62 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>KNN Classification on Webcam Images with mobileNet.</title>
+  <script src="./ml5.js"></script>
+</head>
+
+<body>
+  <h2>KNN Classification on Webcam Images with mobileNet. Built with p5.js</h2>
+  <div id="videoContainer">
+    <video id="video" width="640" height="480" autoplay></video>
+  </div>
+  <div id="status">Loading Model...</div>
+  <br>
+  <br>
+  Prediction: <div id="prediction"></div>
+  <input type="text" id="text_learn" placeholder="Aprender algo">
+  <button id="btn_learn">Aprender</button>
+  <button id="btn_download_json">Descargar modelo JSON</button>
+   
+  <script>
+
+    var video = document.getElementById("video");
+    var status = document.getElementById("status");
+    var prediction = document.getElementById("prediction");
+    var text_learn = document.getElementById("text_learn");
+    var btn_learn = document.getElementById("btn_learn");
+    var btn_download_json = document.getElementById("btn_download_json");
+
+    var knnClassifier = ml5.KNNClassifier();
+    var featureExtractor = ml5.featureExtractor('MobileNet', ()=>{console.log(featureExtractor); document.querySelector('#status').textContent = 'Model ready'});
+    knnClassifier.load("./model.json", console.log("file loaded"));
+    navigator.getUserMedia({ video: {} },(stream) => {
+      video.srcObject = stream 
+      setInterval(() => {
+        const features = featureExtractor.infer(video); // Tomar foto
+        knnClassifier.classify(features, (err, result) => {
+          prediction.innerHTML = JSON.stringify(result.confidencesByLabel);
+          for(var i in result.confidencesByLabel){
+            if(result.confidencesByLabel[i] == 1){prediction.innerHTML = JSON.stringify(result.confidencesByLabel) + "= " + i;}
+          }
+        });
+      }, 100);
+    }, (err) => console.error(err)) // Habilitar camara
+      
+
+    btn_learn.addEventListener('click',()=>{
+      const features = featureExtractor.infer(video); // Tomar foto
+      var label = text_learn.value;
+      knnClassifier.addExample(features, label);
+    });
+    
+    btn_download_json.addEventListener('click', ()=>{
+      knnClassifier.save("model.json");
+    });
+
+
+  </script>
+</body>
+
+</html>
