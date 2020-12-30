@@ -2,22 +2,35 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>KNN Classification on Webcam Images with mobileNet.</title>
+  <title>Vision artificial con Ml5(KNN)</title>
   <script src="./ml5.js"></script>
+  <link rel="stylesheet" href="https://josereza.github.io/src/bootstrap.css">
 </head>
 
-<body>
-  <h2>KNN Classification on Webcam Images with mobileNet. Built with p5.js</h2>
-  <div id="videoContainer">
-    <video id="video" width="640" height="480" autoplay></video>
+<body class="bg-white text-white">
+  <div class="text-center align-items-center mx-auto card bg-dark p-6 mb-3" style="width: 80%;">
+    <br>
+    <br>
+    <h2 class="text-white bg-primary" style="width: 95%;">Reconocimiento de objetos con ML5.js y Knn</h2>
+    <br>
+    <br>
+    <div class="p-6 bg-primary border mx-auto mb-6 mt-6" id="videoContainer" style="width: 80%; height: 75%;">
+      <video id="video" width="640" height="480" autoplay></video>
+    </div>
+    <br>
+    <div id="status" class="text-white"> <h2>Cargando modelo...</h2></div>
+    <br>
+    <br>
+    <h2>Prediccion:<div id="prediction"> Haga aprender a la red neuronal</div></h2>
+    <br>
+    <input type="text" id="text_learn" placeholder="Etiqueta algo">
+    <br>
+    <button class="btn btn-primary" id="btn_learn">Enseñarle a la red neuronal</button>
+    <br>
+    <button class="btn btn-warning" id="btn_download_json">Descargar Red neuronal</button>
+    <br>
+    <br>
   </div>
-  <div id="status">Loading Model...</div>
-  <br>
-  <br>
-  Prediction: <div id="prediction"></div>
-  <input type="text" id="text_learn" placeholder="Aprender algo">
-  <button id="btn_learn">Aprender</button>
-  <button id="btn_download_json">Descargar modelo JSON</button>
    
   <script>
 
@@ -29,16 +42,15 @@
     var btn_download_json = document.getElementById("btn_download_json");
 
     var knnClassifier = ml5.KNNClassifier();
-    var featureExtractor = ml5.featureExtractor('MobileNet', ()=>{console.log(featureExtractor); document.querySelector('#status').textContent = 'Model ready'});
-    knnClassifier.load("./model.json", console.log("file loaded"));
+    var featureExtractor = ml5.featureExtractor('MobileNet', ()=>{console.log(featureExtractor); document.querySelector('#status').textContent = 'Modelo personalizado cargado'});
+    knnClassifier.load("./model.json", console.log("Modelo personalizado cargado"));
     navigator.getUserMedia({ video: {} },(stream) => {
       video.srcObject = stream 
       setInterval(() => {
         const features = featureExtractor.infer(video); // Tomar foto
         knnClassifier.classify(features, (err, result) => {
-          prediction.innerHTML = JSON.stringify(result.confidencesByLabel);
           for(var i in result.confidencesByLabel){
-            if(result.confidencesByLabel[i] == 1){prediction.innerHTML = JSON.stringify(result.confidencesByLabel) + "= " + i;}
+            if(result.confidencesByLabel[i] == 1){prediction.innerHTML = i;}
           }
         });
       }, 100);
