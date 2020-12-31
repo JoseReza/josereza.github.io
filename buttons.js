@@ -1,7 +1,5 @@
 var dominio = 'https://josereza.github.io';
 
-var trayectoria = document.getElementById("trayectoria");
-
 var btn_inicio = document.getElementById("btn-inicio");
 var btn_electronica = document.getElementById("btn-electronica");
 var btn_mecanica = document.getElementById("btn-mecanica");
@@ -12,7 +10,7 @@ var btn_certificaciones = document.getElementById("btn-certificaciones");
 var btn_proyectos = document.getElementById("btn-proyectos");
 
 btn_inicio.addEventListener("click", () => {
-    page.innerHTML = inicio;
+    location.replace(dominio)
 });
 
 btn_electronica.addEventListener("click", () => {
