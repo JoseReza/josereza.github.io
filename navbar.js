@@ -37,9 +37,6 @@ navbar.innerHTML = `
             </li>
           </ul>
         </div>
-              <script type="text/javascript">
-                function	function1(){ document.getElementById("navbarColor01").classList.toggle('show');}
-              </script>
       </nav>
 
 `;
