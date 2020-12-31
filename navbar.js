@@ -3,7 +3,7 @@ var navbar = document.getElementById("navbar");
 navbar.innerHTML = `
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <img src="src/icon.png" width="50" height="50">
+        <img src="https://josereza.github.io/src/icon.png" width="50" height="50">
         &nbsp;&nbsp;&nbsp;
         <a class="navbar-brand" href="#">Hoja de experiencia</a>
         <button onclick="function1()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
