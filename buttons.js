@@ -30,7 +30,7 @@ btn_programacion.addEventListener("click", () => {
 });
 btn_control.addEventListener("click", () => {
 
-  location.replace(dominio + "/control.html")
+  location.replace(dominio + "/control/index.html")
 });
 
 btn_comunicaciones.addEventListener("click", () => {
