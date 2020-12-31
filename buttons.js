@@ -11,8 +11,6 @@ var btn_comunicaciones = document.getElementById("btn-comunicaciones");
 var btn_certificaciones = document.getElementById("btn-certificaciones");
 var btn_proyectos = document.getElementById("btn-proyectos");
 
-var inicio = page.innerHTML;
-
 btn_inicio.addEventListener("click", () => {
     page.innerHTML = inicio;
 });
