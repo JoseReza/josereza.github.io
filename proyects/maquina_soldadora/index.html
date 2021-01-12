@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#222">
+    <meta name="description" content="Hoja de experiencia de José">
+    <meta name="author" content="José Rosendo Soto Reza">
+    <link rel="stylesheet" href="https://josereza.github.io/src/bootstrap.css">
+    <link rel="icon" href="https://josereza.github.io/src/icon.png">
+    <title>José Rosendo Soto Reza</title>
+
+    <div id="navbar"></div>
+    <script src="https://josereza.github.io/navbar.js"></script>
+    <script type="text/javascript">
+         function	function1(){ document.getElementById("navbarColor01").classList.toggle('show');}
+    </script>
+
+  </head>
+
+  <body class="text-center align-items-center">
+
+    <br>
+    <br>
+    <div class="mx-auto text-center text-white bg-primary p-6" style="width: 80%;">
+      <br>
+      <h2>Diseño e implementación de interfaz de usuario</h2>
+      <p>Aplicación de concepto de internet industrial de las cosas</p>
+      <br>
+    </div>
+    <br>
+    <br>
+    <div class="mx-auto border border-primary" id="interfaz-maquina-soldadora" style="width: 50%; height: 60%;" >
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <img src="./src/wifinode.png" width = "50" height = "50">
+          <a class="navbar-brand" href="#">Maquina soldadora <br> Demo</a>            
+          <button onclick="function1()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+          <div class="collapse navbar-collapse" id="navbarColor01">
+
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a onclick="inicio()" class="nav-link text-center text-center">Inicio</a>
+              </li>
+              <li  class="nav-item">
+                <a onclick="ejecutar()" class="nav-link text-center text-center">Ejecutar</a>
+              </li>
+              <li class="nav-item">
+                <a onclick="control_manual()" class="nav-link text-center">Control manual</a>
+              </li>
+              <li class="nav-item">
+                <a onclick="programar()" class="nav-link text-center">Programar</a>
+              </li>
+              <li class="nav-item">
+                <a onclick="configurar()" class="nav-link text-center">configurar</a>
+              </li>
+            </ul>
+
+          </div>  
+
+        <script type="text/javascript">
+           function  function1(){ document.getElementById("navbarColor02").classList.toggle('show');}
+        </script>
+        </nav> 
+
+        <div id="pagina">
+
+          <h2 class="text-center bg-primary text-white">Ejecutar</h2>
+          <div class="mx-auto card text-white bg-primary mb-3 text-center" style="max-width: 20rem;">
+          <div class="card-body">
+          <h4 class="card-title bg-warning text-center">Ejecutar</h4>
+          <p class="card-title">
+          <p><a onClick = "ejecutar_iniciar()" class="btn btn-warning btn-lg">Iniciar</a></p>
+          <p><a onClick = "ejecutar_parar()" class="btn btn-warning btn-lg">Detener</a></p>
+          <div class="mx-auto card text-white bg-primary mb-3 text-center" style="max-width: 20rem;">
+              <div class="card-body">
+                <h4 class="card-title bg-warning text-center">Rutina guardada</h4>
+                  <p class="card-title">
+                  <p id="RUTINA"></p>
+                  </p>
+              </div>
+        </div>
+          </p>
+          </div>
+          </div>
+          <div class="mx-auto card text-white bg-primary mb-3 text-center" style="max-width: 20rem;">
+              <div class="card-body">
+                  <h4 class="card-title bg-warning text-center">Avance</h4>
+                  <p class="card-title">
+                  <p><a onClick="control_manual_avance_lineal()" class="btn btn-warning btn-lg">Lineal</a> </p>                
+                  <p><a onClick="control_manual_avance_angular()" class="btn btn-warning btn-lg">Angular</a></p>
+                  </p>
+              </div>
+          </div>
+          <div class="mx-auto card text-white bg-primary mb-3 text-center" style="max-width: 20rem;">
+              <div class="card-body">
+                  <h4 class="card-title bg-warning text-center">Velocidad</h4>
+                  <p class="card-title">
+                  <p><a onClick="control_manual_velocidad_lineal()" class="btn btn-warning btn-lg">Lineal</a> </p>                
+                  <p><a onClick="control_manual_velocidad_angular()" class="btn btn-warning btn-lg">Angular</a></p>
+                  </p>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/W1cihA2iUeM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br>
+    <br>
+
+    <div class="border border-primary card-body bg-primary mx-auto text-white p-6 rounded" style="max-width: 40%;">
+      <h4 class="card-title bg-warning text-center border">Máquina soldadora</h4>
+      <br>
+      <div class="bg-dark">
+        <img src="./src/maquina_soldadora.jpg" style="width: 250px;">
+      </div>
+      <br>
+      <br>
+        <p class="card-title text-center">
+        El problema de la máquina es que la comunicación hombre-máquina con la que funcionaba anteriormente
+        se daño por cuestiones de uso y desgaste, con ello el cliente asesor de la empresa SMT ordenó a nuestro 
+        equipo el desarrollo y aplicación de un control (fisico o virtual) para manipular la máquina.
+        <br>
+        Se realizó la indagación e investigación de las partes y funcionamiento de la maquina soldadora
+        de la empresa SMT, aplicando así retrofitting e ingeniería inversa.
+        Posteriormente cuando se obtuvó el conocimiento del funcionamiento de la máquina soldadora
+        se hizó una evaluación de la tecnología que se aplicaría al sistema de la máquina.
+        Se dicidió aplicar un sistema embebido Iot de la compañia de Espressif para dotar a la máquina soldadora
+        de conectividad inalambrica a través de Wifi y con ello dar un control virtual multiplataforma.
+        </p>
+    </div>
+
+    <br>
+    <br>
+
+  </body>
+  <script src="./interfaz_maquina_soldadora.js"></script>
+    <script src="https://josereza.github.io/buttons.js"></script>
+</html>
