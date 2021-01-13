@@ -1,4 +1,6 @@
 
+function  function2(){ document.getElementById("navbarColor02").classList.toggle('show');}
+
             function inicio(){
               pagina.innerHTML = `<div class="text-center">
                                     <br>
