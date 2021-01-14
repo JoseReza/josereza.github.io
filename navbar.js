@@ -15,6 +15,21 @@ navbar.innerHTML = `
               <a class="nav-link" id= "btn-inicio">Inicio</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" id= "btn-electronica">Electrónica</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id= "btn-mecanica">Mecánica</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id= "btn-programacion">Programación</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id= "btn-control">Control</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id= "btn-comunicaciones">Comunicaciones</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" id= "btn-certificaciones">Certificaciones</a>
             </li>
             <li class="nav-item">
