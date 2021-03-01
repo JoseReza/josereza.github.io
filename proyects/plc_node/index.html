@@ -34,14 +34,44 @@
             
         <div class="jumbotron text-center">
                 <img src="src/plc_node.png" width="200" height="200">
-                <h2 class="lead">Proyecto orientado a la cuarta revolucion industrial</h2>
                 <br>
-                <h2 class="lead">Impulsando la tecnología IIOT</h2>
+                <br>
+                <b>
+                  <h1 >Proyecto orientado a la cuarta revolucion industrial</h1>
+                  <br>
+                  <h1 >Impulsando la tecnología IIOT</h1>
+                </b>
                 <br>
                 <a class="btn btn-warning btn-lg" href="https://drive.google.com/file/d/1BdQ3BOU-ysffamqjHTPBjf2OLPSFm4Tt/view?usp=sharing" role="button">Ver documentación</a>
                 <br> 
-              </div>
+          </div>
             
+
+              <div class="mx-auto card text-white bg-primary mb-3" style="width: 80%;">
+                <div class="card-body">
+                  <h4 class="card-title bg-warning text-center">¿Que es Plc Node?</h4>
+                    <p class="card-title text-center">
+                      
+                    
+                    PLC NODE es un modulo análogo a al funcionamiento de un controlador lógico programable que se considera como un nodo
+                    donde se concentra información, se controla y optimiza las acciones de un proceso
+                    industrial por medio de la implementación de internet y está orientado al procesamiento
+                    de entradas y salidas donde en las entradas se utilizan sensores y en las salidas se
+                    utilizan actuadores. 
+                    <br>
+                    <br>
+                    El proyecto cuenta con un software emergente que implementa
+                    tecnología de internet de las cosas. El software es un entorno de programación
+                    integrado que es capaz de implementar instrucciones a bloques, donde cada bloque
+                    tiene funcionalidades diferentes, dando la capacidad a PLC NODE de conectar
+                    servicios externos, creación de interfaces de usuario, conexión a una gran variedad de
+                    protocolos de comunicación, procesamiento de señales y algunos módulos de
+                    inteligencia artificial.
+          
+                    <br>
+                    </p>
+                </div>
+              </div>
                 <br>
 
                 <div style="width: 80%;" class="border border-primary bg-dark mx-auto text-center align-items-center p-6 text-white">
@@ -50,31 +80,84 @@
                   <iframe style="width: 80%;"  src="https://www.youtube.com/embed/nX1A2xBffW8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
                  </div> 
                 </div>
-               
-            
-                 <br>
-            
+
+                <div class="text-center">
+                  <img height="300" src="https://josereza.github.io/proyects/plc_node/src/PlcNodeV4.4.png">
+                  </div>
+
+                  <div style="width: 80%;" class="mx-auto">
+                    <ul class="nav nav-tabs">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="descripcion">Descripcion</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="especificaciones">Especificaciones</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="software">Software</a>
+                      </li>
+                    </ul>
+                    <br>
+                    <div id="contenido">
+                      content
+                    </div>
+                    <script>
+                      var contenido = document.getElementById("contenido");
+                      var descripcion = document.getElementById("descripcion");
+                      var especificaciones = document.getElementById("especificaciones");
+                      var software = document.getElementById("software");
+                      contenido.innerHTML = `Modulo analogo a un controlador logico programable 
+                        de 6 entradas y 6 salidas, capaz de conexion alambrica e inalambrica, indicadores de estado
+                        por cada entrada y cada salida.`;
+                      descripcion.addEventListener('click',function(){
+                        contenido.innerHTML = `Modulo analogo a un controlador logico programable 
+                        de 6 entradas y 6 salidas, capaz de conexion alambrica e inalambrica, indicadores de estado
+                        por cada entrada y cada salida.`;
+                      });
+                      especificaciones.addEventListener('click', function(){
+                        contenido.innerHTML = `
+                        Microcontrolador IOT
+                        <br>
+                        Alimentación directa a 110VAC.
+                        <br>
+                        Entradas/Salidas
+                        <br>
+                           &nbsp;&nbsp;&nbsp;&#8226; 6 entradas analogas adaptadas a 24 VDC
+                           <br>
+                           &nbsp;&nbsp;&nbsp;&#8226; 6 salidas adaptadas a 24 VDC
+                           <br>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;4 salidas digitales
+                              <br>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;2 salidas analogas.
+                              <br>
+                         Comunicación.
+                        <br>
+                             &nbsp;&nbsp;&nbsp;&#8226;Alámbrica.
+                            <br>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;Protocolo Usb 
+                              <br>
+                             &nbsp;&nbsp;&nbsp;&#8226;Inalámbrica
+                            <br>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;Protocolo Wifi en conjunto con Websockets.
+                          
+                        `;
+                        software.addEventListener('click', function(){
+                          descripcion.innerHTML = `
+                          <a href="">Software</a>
+                          `
+                        });
+                      });
+                    </script>
+                  </div>
+
+                  <br>
+                  <br>
+
                 <div class="mx-auto card text-white bg-primary mb-3" style="width: 80%;">
                   <div class="card-body">
-                    <h4 class="card-title bg-warning text-center">¿Que es Plc Node?</h4>
+                    <h4 class="card-title bg-warning text-center">¿Demanda de Plc´s con internet industrial?</h4>
                       <p class="card-title text-center">
-                        
-                      
-                      PLC NODE es un modulo análogo a al funcionamiento de un controlador lógico programable que se considera como un nodo
-                      donde se concentra información, se controla y optimiza las acciones de un proceso
-                      industrial por medio de la implementación de internet y está orientado al procesamiento
-                      de entradas y salidas donde en las entradas se utilizan sensores y en las salidas se
-                      utilizan actuadores. El proyecto cuenta con un software emergente que implementa
-                      tecnología de internet de las cosas. El software es un entorno de programación
-                      integrado que es capaz de implementar instrucciones a bloques, donde cada bloque
-                      tiene funcionalidades diferentes, dando la capacidad a PLC NODE de conectar
-                      servicios externos, creación de interfaces de usuario, conexión a una gran variedad de
-                      protocolos de comunicación, procesamiento de señales y algunos módulos de
-                      inteligencia artificial.
-            
                       <br>
-                      <br>
-                      
                       A nivel global, los controladores lógicos programables son demandados,
                       debido a que se necesitan procesos automatizados para eficientar la productividad y
                       generación de productos en masa, con la llegada de cuarta revolución industrial cada
@@ -85,44 +168,7 @@
                   </div>
                 </div>
                 <br>
-            
-                <div class="text-center">
-                  <img height="300" src="https://josereza.github.io/proyects/plc_node/src/PlcNodeV4.4.png">
-                  </div>
-                  <br>
-                  
-                <div class="mx-auto card text-white bg-primary mb-3" style="width: 80%;">
-                  <div class="card-body">
-                    <h4 class="card-title bg-warning">Caracteristicas técnicas</h4>
-                      <p class="card-title">
-                        Microcontrolador IOT
-                        <br>
-                        Alimentación directa a 110VAC.
-                        <br>
-                        Entradas/Salidas
-                        <br>
-                           &nbsp;&nbsp;&nbsp; 6 entradas analogas adaptadas a 24 VDC
-                           <br>
-                           &nbsp;&nbsp;&nbsp; 6 salidas adaptadas a 24 VDC
-                           <br>
-                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 salidas digitales
-                              <br>
-                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 salidas analogas.
-                              <br>
-                         Comunicación.
-                        <br>
-                             &nbsp;&nbsp;&nbsp;Alámbrica.
-                            <br>
-                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protocolo Usb 
-                              <br>
-                             &nbsp;&nbsp;&nbsp;Inalámbrica
-                            <br>
-                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protocolo Wifi en conjunto con Websockets.
-                              <br>
-                      </p>
-                  </div>
-                </div>
-            
+
                 <br>
               <br>
             
