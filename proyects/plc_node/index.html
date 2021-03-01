@@ -64,15 +64,6 @@
                     utilizan actuadores. 
                     <br>
                     <br>
-                    El proyecto cuenta con un software emergente que implementa
-                    tecnología de internet de las cosas. El software es un entorno de programación
-                    integrado que es capaz de implementar instrucciones a bloques, donde cada bloque
-                    tiene funcionalidades diferentes, dando la capacidad a PLC NODE de conectar
-                    servicios externos, creación de interfaces de usuario, conexión a una gran variedad de
-                    protocolos de comunicación, procesamiento de señales y algunos módulos de
-                    inteligencia artificial.
-          
-                    <br>
                     </p>
                 </div>
               </div>
@@ -98,12 +89,15 @@
                       var descripcion = document.getElementById("descripcion");
                       var especificaciones = document.getElementById("especificaciones");
                       var software = document.getElementById("software");
-                      contenido.innerHTML = `Modulo analogo a un controlador logico programable 
+                      contenido.innerHTML = `
+                        <img src="src/PlcNodeV4.4Caracteristicas.png" width="200">
+                        <br>
+                        Modulo analogo a un controlador logico programable 
                         de 6 entradas y 6 salidas, capaz de conexion alambrica e inalambrica, indicadores de estado
                         por cada entrada y cada salida.`;
                       descripcion.addEventListener('click',function(){
                         contenido.innerHTML = `
-                        <img src="src/PlcNodeSoftware.png" width="75">
+                        <img src="src/PlcNodeV4.4Caracteristicas.png" width="200">
                         <br>
                         Modulo analogo a un controlador logico programable 
                         de 6 entradas y 6 salidas, capaz de conexion alambrica e inalambrica, indicadores de estado
@@ -138,6 +132,16 @@
                         `;
                         software.addEventListener('click', function(){
                           contenido.innerHTML = `
+                          <br>
+                          El proyecto cuenta con un software emergente que implementa
+                          tecnología de internet de las cosas. El software es un entorno de programación
+                          integrado que es capaz de implementar instrucciones a bloques, donde cada bloque
+                          tiene funcionalidades diferentes, dando la capacidad a PLC NODE de conectar
+                          servicios externos, creación de interfaces de usuario, conexión a una gran variedad de
+                          protocolos de comunicación, procesamiento de señales y algunos módulos de
+                          inteligencia artificial.
+                          <br>
+                          <br>
                           <img src="src/PlcNodeSoftware.png" width="75">
                           <a href="https://drive.google.com/file/d/17BLBmM8innxE07ZbkRcGzrtRxcJ1Hryr/view?usp=sharing">PlcNodeSoftware Windows 10 64 bits</a>
                           `
