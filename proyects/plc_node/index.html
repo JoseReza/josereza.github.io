@@ -83,7 +83,8 @@
                       var descripcion = document.getElementById("descripcion");
                       var especificaciones = document.getElementById("especificaciones");
                       var software = document.getElementById("software");
-                      contenido.innerHTML = `<img src="src/PlcNodeV4.4Caracteristicas.png" style="width:75%;">
+                      contenido.innerHTML = `
+                        <img src="src/PlcNodeV4.4Caracteristicas.png" style="width:75%;">
                         <br>
                         <br>
                         Microcontrolador IOT
@@ -112,7 +113,7 @@
                           `;
                       descripcion.addEventListener('click',function(){
                         contenido.innerHTML = `
-                        <img src="src/PlcNodeV4.4.png" height="300">
+                        <img src="src/PlcNodeV4.4.png" style="width:75%;">
                         <br>
                         <br>
                         Modulo analogo a un controlador logico programable 
@@ -160,7 +161,9 @@
                           <img src="src/PlcNodeSoftwareUserInterface.png" style="width:75%;">
                           <br>
                           <br>
-                          <div class="bg-warning text-white">Descarga</div>
+                          <div class="bg-primary text-white">Descarga</div>
+                          <br>
+                          <br>
                           El proyecto cuenta con un software emergente que implementa
                           tecnología de internet de las cosas. El software es un entorno de programación
                           integrado que es capaz de implementar instrucciones a bloques, donde cada bloque
