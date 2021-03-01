@@ -40,7 +40,7 @@
                   <h1 >Proyecto orientado a la cuarta revolucion industrial</h1>
                   <br>
                   <h1 >Impulsando la tecnología IIOT</h1>
-                </b>
+                </br>
                 <br>
                 <a class="btn btn-warning btn-lg" href="https://drive.google.com/file/d/1BdQ3BOU-ysffamqjHTPBjf2OLPSFm4Tt/view?usp=sharing" role="button">Ver documentación</a>
                 <br> 
@@ -86,10 +86,11 @@
                   </div>
                   <br>
                   <br>
+                  <br>
                   <div style="width: 80%;" class="mx-auto">
                     <ul class="nav nav-tabs">
                       <li class="nav-item">
-                        <a class="nav-link active" id="descripcion">Descripcion</a>
+                        <a class="nav-link" id="descripcion">Descripcion</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" id="especificaciones">Especificaciones</a>
@@ -111,7 +112,10 @@
                         de 6 entradas y 6 salidas, capaz de conexion alambrica e inalambrica, indicadores de estado
                         por cada entrada y cada salida.`;
                       descripcion.addEventListener('click',function(){
-                        contenido.innerHTML = `Modulo analogo a un controlador logico programable 
+                        contenido.innerHTML = `
+                        <img src="src/PlcNodeSoftware.png" width="75">
+                        <br>
+                        Modulo analogo a un controlador logico programable 
                         de 6 entradas y 6 salidas, capaz de conexion alambrica e inalambrica, indicadores de estado
                         por cada entrada y cada salida.`;
                       });
@@ -144,6 +148,7 @@
                         `;
                         software.addEventListener('click', function(){
                           contenido.innerHTML = `
+                          <img src="src/PlcNodeSoftware.png" width="75">
                           <a href="https://drive.google.com/file/d/17BLBmM8innxE07ZbkRcGzrtRxcJ1Hryr/view?usp=sharing">PlcNodeSoftware Windows 10 64 bits</a>
                           `
                         });
