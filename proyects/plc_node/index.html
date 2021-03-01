@@ -47,7 +47,7 @@
           </div>
             
             <div class="text-center">
-                  <img height="300" src="src/PlcNodeV4.4.png">
+                  <img height="300" src="src/PlcNodeV4.4Logo.png">
              </div>
                   <br>
                   <br>
@@ -68,7 +68,7 @@
                 </div>
               </div>
                   <br>
-                  <div style="width: 80%;" class="mx-auto">
+                  <div style="width: 80%;" class="mx-auto text-center">
                     <ul class="nav nav-tabs">
                       <li class="nav-item">
                         <a class="nav-link" id="descripcion">Descripcion</a>
@@ -81,7 +81,7 @@
                       </li>
                     </ul>
                     <br>
-                    <div id="contenido">
+                    <div id="contenido" class="text-center">
                       content
                     </div>
                     <script>
@@ -90,14 +90,14 @@
                       var especificaciones = document.getElementById("especificaciones");
                       var software = document.getElementById("software");
                       contenido.innerHTML = `
-                        <img src="src/PlcNodeV4.4Caracteristicas.png" height="300">
+                        <img src="src/PlcNodeV4.4.png" height="300">
                         <br>
                         Modulo analogo a un controlador logico programable 
                         de 6 entradas y 6 salidas, capaz de conexion alambrica e inalambrica, indicadores de estado
                         por cada entrada y cada salida.`;
                       descripcion.addEventListener('click',function(){
                         contenido.innerHTML = `
-                        <img src="src/PlcNodeV4.4Caracteristicas.png" height="300">
+                        <img src="src/PlcNodeV4.4.png" height="300">
                         <br>
                         Modulo analogo a un controlador logico programable 
                         de 6 entradas y 6 salidas, capaz de conexion alambrica e inalambrica, indicadores de estado
@@ -105,6 +105,8 @@
                       });
                       especificaciones.addEventListener('click', function(){
                         contenido.innerHTML = `
+                        <img src="src/PlcNodeV4.4.png" height="300">
+                        <br>
                         Microcontrolador IOT
                         <br>
                         Alimentación directa a 110VAC.
@@ -132,6 +134,13 @@
                         `;
                         software.addEventListener('click', function(){
                           contenido.innerHTML = `
+                          <img src="src/PlcNodeSoftwareSoftwareMain.png" height="300">
+                          <br>
+                          <img src="src/PlcNodeSoftwareHardwareProgramming.png" height="300">
+                          <br>
+                          <img src="src/PlcNodeSoftwareSoftwareProgramming.png" height="300">
+                          <br>
+                          <img src="src/PlcNodeSoftwareUserInterface.png" height="300">
                           <br>
                           El proyecto cuenta con un software emergente que implementa
                           tecnología de internet de las cosas. El software es un entorno de programación
