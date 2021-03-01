@@ -1,0 +1,19 @@
+{
+  "name": "José Rosendo Soto Reza",
+  "short_name": "José Rosendo Soto Reza",
+  "description": "Hoja de experiencia de Jose Soto Reza",
+  "background_color": "#2B2B2B",
+  "theme_color": "#F0DB4F",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "./?utm_source=web_app_manifest",
+  "scope": "./",
+  "lang": "es-MX",
+  "icons": [
+    {
+      "src": "./src/icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}
