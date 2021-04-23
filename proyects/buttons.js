@@ -14,7 +14,7 @@ btn_reconocimiento_facial.addEventListener('click', function(){
 })
 
 btn_plc_node.addEventListener('click', function(){
-    location.replace("./plc_node/index.html")
+    location.replace("https://plcnode.github.io/PlcNode/")
 })
 
 btn_investigacion_iiot.addEventListener('click', function(){
