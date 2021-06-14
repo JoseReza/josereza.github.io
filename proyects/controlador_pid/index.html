@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#222">
+    <meta name="description" content="Hoja de experiencia de José">
+    <meta name="author" content="José Rosendo Soto Reza">
+    <link rel="stylesheet" href="https://josereza.github.io/src/bootstrap.css">
+    <link rel="icon" href="https://josereza.github.io/src/icon.png">
+    <title>Controlador PID</title>
+    <div id="navbar"></div>
+    <script src="https://josereza.github.io/navbar.js"></script>
+    <script src="./../../src/chart.js"></script>
+    <script type="text/javascript">
+        function function1() { document.getElementById("navbarColor01").classList.toggle('show'); }
+    </script>
+</head>
+
+<body class="text-center">
+
+    <table>
+        <td style="width: 80%;">
+            <canvas id="myChart"></canvas>
+        </td>
+        <td style="width: 5%;">
+            <label class="card card-primary">salidaP:</label><span id="salidaP">0</span>%
+            <br>
+            <label class="card card-primary">salidaI:</label><span id="salidaI">0</span>%
+            <br>
+            <label class="card card-primary">salidaD:</label><span id="salidaD">0</span>%
+            <br>
+            <label class="card card-primary">salida:</label><span id="salida">0</span>%
+            <br>
+            <br>
+            <label>Kp:</label><br><input type="number" id="kp" style="margin: 1%;" value="1" min="1" max="100">
+            <br>
+            <label>Ki:</label><br><input type="number" id="ki" style="margin: 1%;" value="1" min="1" max="100">
+            <br>
+            <label>Kd:</label><br><input type="number" id="kd" style="margin: 1%;" value="1" min="1" max="100">
+            <br>
+            <label>setPoint</label><br><input type="number" id="setPoint" style="margin: 1%;" value="27" min="1" max="100">
+            <br>
+            <label>TAmbiente</label><br><input type="number" id="TAmbiente" style="margin: 1%;" value="40" min="1" max="100">
+            <br>
+            <label>TMin</label><br><input type="number" id="TMin" style="margin: 1%;" value="16" min="1" max="100">
+            <br>
+            <br>
+            <button id="guardar" class="btn btn-primary">Guardar</button>
+        </td>
+    </table>
+    <script src="./index.js"></script>
+</body>
+
+</html>
