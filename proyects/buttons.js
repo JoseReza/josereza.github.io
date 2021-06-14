@@ -1,5 +1,5 @@
 var btn_vision_artificial_knn = document.getElementById("btn-vision-artificial-knn");
-var btn_reconocimiento_facial = document.getElementById("btn-reconocimiento-facial");
+var btn_controlador_pid = document.getElementById("btn-controlador_pid");
 var btn_plc_node = document.getElementById("btn-plc-node");
 var btn_investigacion_iiot = document.getElementById("btn-investigacion-iiot");
 var btn_curso_node_red = document.getElementById("btn-curso-node-red");
