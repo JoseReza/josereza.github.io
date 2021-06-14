@@ -9,8 +9,8 @@ btn_vision_artificial_knn.addEventListener('click', function(){
     location.replace("./artificial_vision_knn/index.html")
 })
 
-btn_reconocimiento_facial.addEventListener('click', function(){
-    location.replace("./face_recognition/index.html")
+btn_controlador_pid.addEventListener('click', function(){
+    location.replace("./controlador_pid/index.html")
 })
 
 btn_plc_node.addEventListener('click', function(){
