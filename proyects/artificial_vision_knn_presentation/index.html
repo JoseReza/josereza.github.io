@@ -56,8 +56,6 @@
         <br>
         <button class="btn btn-primary" id="btn_learn">Enseñarle a la red neuronal</button>
         <br>
-        <button class="btn btn-warning" id="btn_download_json">Descargar Red neuronal</button>
-        <br>
         <br>
     </div>
 
@@ -67,7 +65,6 @@
         var prediction = document.getElementById("prediction");
         var text_learn = document.getElementById("text_learn");
         var btn_learn = document.getElementById("btn_learn");
-        var btn_download_json = document.getElementById("btn_download_json");
 
         var knnClassifier = ml5.KNNClassifier();
         var featureExtractor = ml5.featureExtractor('MobileNet', () => {
@@ -110,10 +107,6 @@
             const features = featureExtractor.infer(video); // Tomar foto
             var label = text_learn.value;
             knnClassifier.addExample(features, label);
-        });
-
-        btn_download_json.addEventListener('click', () => {
-            knnClassifier.save("model.json");
         });
     </script>
 
