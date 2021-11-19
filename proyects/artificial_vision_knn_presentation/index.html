@@ -26,6 +26,28 @@
         </div>
         <br>
         <br>
+        <div>
+            <div style="float: left;">
+                <svg height="100" width="100">
+                    <circle id="circle1" cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="red" />
+                </svg>
+            </div>
+            <div style="float: left;">
+                <svg height="100" width="100">
+                    <circle id="circle2" cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="red" />
+                </svg>
+            </div>
+            <div style="float: left;">
+                <svg height="100" width="100">
+                    <circle id="circle3" cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="red" />
+                </svg>
+            </div>
+            <div style="float: left;">
+                <svg height="100" width="100">
+                    <circle id="circle4" cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="red" />
+                </svg>
+            </div>
+        </div>
         <h2>Prediccion:
             <div id="prediction"> Haga aprender a la red neuronal</div>
         </h2>
@@ -62,6 +84,20 @@
                     knnClassifier.classify(features, (err, result) => {
                         for (var i in result.confidencesByLabel) {
                             if (result.confidencesByLabel[i] == 1) {
+                                if (i == "circle1") {
+                                    document.getElementById("circle1").setAttribute("fill", "green")
+                                } else if (i == "circle2") {
+                                    document.getElementById("circle2").setAttribute("fill", "green")
+                                } else if (i == "circle3") {
+                                    document.getElementById("circle3").setAttribute("fill", "green")
+                                } else if (i == "circle4") {
+                                    document.getElementById("circle4").setAttribute("fill", "green")
+                                } else {
+                                    document.getElementById("circle1").setAttribute("fill", "red")
+                                    document.getElementById("circle2").setAttribute("fill", "red")
+                                    document.getElementById("circle3").setAttribute("fill", "red")
+                                    document.getElementById("circle4").setAttribute("fill", "red")
+                                }
                                 prediction.innerHTML = i;
                             }
                         }
