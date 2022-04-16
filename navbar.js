@@ -35,6 +35,9 @@ navbar.innerHTML = `
             <li class="nav-item">
               <a class="nav-link" id= "btn-proyectos">Proyectos</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" id= "btn-imagenes">Imagenes</a>
+            </li>
           </ul>
         </div>
       </nav>
