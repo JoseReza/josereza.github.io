@@ -8,6 +8,7 @@ var btn_control = document.getElementById("btn-control");
 var btn_comunicaciones = document.getElementById("btn-comunicaciones");
 var btn_certificaciones = document.getElementById("btn-certificaciones");
 var btn_proyectos = document.getElementById("btn-proyectos");
+var btn_imagenes = document.getElementById("btn-imagenes");
 
 btn_inicio.addEventListener("click", () => {
     location.replace(dominio)
