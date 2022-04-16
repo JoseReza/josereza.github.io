@@ -41,3 +41,7 @@ btn_certificaciones.addEventListener("click", () => {
 btn_proyectos.addEventListener("click", () => {
   location.replace(dominio + "/proyects/index.html")
 });
+
+btn_imagenes.addEventListener("click", () => {
+  location.replace(dominio + "/images/index.html")
+});
