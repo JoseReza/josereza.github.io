@@ -2,7 +2,7 @@ var navbar = document.getElementById("navbar");
 
 navbar.innerHTML = `
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: fixed; top:0; left:0; width: 100%;">
         <img src="https://josereza.github.io/src/icon.png" width="50" height="50">
         &nbsp;&nbsp;&nbsp;
         <a class="navbar-brand" href="#">Hoja de experiencia</a>
