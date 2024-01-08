@@ -8,7 +8,7 @@ navbar.innerHTML = `
                 <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse text-center" id="navbarColor01">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav mr-auto" style="cursor:pointer;">
             <li class="nav-item">
               <a class="nav-link" id= "btn-inicio">Inicio</a>
             </li>
