@@ -1,4 +1,3 @@
-var btn_vision_artificial_knn = document.getElementById("btn-vision-artificial-knn");
 var btn_controlador_pid = document.getElementById("btn-controlador_pid");
 var btn_plc_node = document.getElementById("btn-plc-node");
 var btn_investigacion_iiot = document.getElementById("btn-investigacion-iiot");
@@ -13,10 +12,6 @@ btn_3d_software.addEventListener('click', function(){
 
 btn_music_software.addEventListener('click', function(){
     window.open("https://canicanremaster.github.io/music-software/src/")
-})
-
-btn_vision_artificial_knn.addEventListener('click', function(){
-    window.open("./artificial_vision_knn/index.html")
 })
 
 btn_controlador_pid.addEventListener('click', function(){
