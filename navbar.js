@@ -22,9 +22,6 @@ navbar.innerHTML = `
               <a class="nav-link" id= "btn-programacion">Programación</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id= "btn-control">Control</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" id= "btn-comunicaciones">Comunicaciones</a>
             </li>
             <li class="nav-item">
