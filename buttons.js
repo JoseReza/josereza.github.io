@@ -4,7 +4,6 @@ var btn_inicio = document.getElementById("btn-inicio");
 var btn_electronica = document.getElementById("btn-electronica");
 var btn_mecanica = document.getElementById("btn-mecanica");
 var btn_programacion = document.getElementById("btn-programacion");
-var btn_control = document.getElementById("btn-control");
 var btn_comunicaciones = document.getElementById("btn-comunicaciones");
 var btn_certificaciones = document.getElementById("btn-certificaciones");
 var btn_proyectos = document.getElementById("btn-proyectos");
@@ -24,10 +23,6 @@ btn_mecanica.addEventListener("click", () => {
 
 btn_programacion.addEventListener("click", () => {
   location.replace(dominio + "/programming/index.html")
-});
-btn_control.addEventListener("click", () => {
-
-  location.replace(dominio + "/control/index.html")
 });
 
 btn_comunicaciones.addEventListener("click", () => {
