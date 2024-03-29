@@ -7,11 +7,11 @@ var btn_music_software = document.getElementById("btn-music-software");
 var btn_3d_software = document.getElementById("btn-3d-software");
 
 btn_3d_software.addEventListener('click', function(){
-    window.open("https://canicanremaster.github.io/3d-software/src/")
+    window.open("https://josereza.github.io/3d-software/src/")
 })
 
 btn_music_software.addEventListener('click', function(){
-    window.open("https://canicanremaster.github.io/music-software/src/")
+    window.open("https://josereza.github.io/music-software/src/")
 })
 
 btn_controlador_pid.addEventListener('click', function(){
