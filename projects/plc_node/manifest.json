@@ -1,0 +1,19 @@
+{
+  "name": "PlcNode",
+  "short_name": "PlcNode",
+  "description": "Documentación de proyecto PlcNode",
+  "background_color": "#2196f3",
+  "theme_color": "#2196f3",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "./?utm_source=web_app_manifest",
+  "scope": "./",
+  "lang": "es-MX",
+  "icons": [
+    {
+      "src": "./src/plc_node.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}
