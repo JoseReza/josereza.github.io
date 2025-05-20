@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2196f3">
+    <meta name="description" content="Controlador PID - Simulación y Visualización">
+    <meta name="author" content="José Rosendo Soto Reza">
+    <link rel="stylesheet" href="../../src/bootstrap.css">
+    <link rel="stylesheet" href="../../src/shared.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../src/icon.svg">
+    <title>Controlador PID</title>
+
+    <style>
+        .control-panel {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .control-input {
+            width: 80px;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .control-label {
+            color: white;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .output-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2196f3;
+        }
+
+        .chart-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+
+    <div id="navbar"></div>
+    <script src="../../navbar.js"></script>
+    <script type="text/javascript">
+        function function1() { document.getElementById("navbarColor01").classList.toggle('show'); }
+    </script>
+</head>
+
+<body>
+    <div id="background-image"></div>
+    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="control-panel">
+                    <div class="mb-4">
+                        <h4 class="text-white mb-3">Salidas</h4>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="control-label">Proporcional:</span>
+                            <span id="salidaP" class="output-value">0%</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="control-label">Integral:</span>
+                            <span id="salidaI" class="output-value">0%</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="control-label">Derivativa:</span>
+                            <span id="salidaD" class="output-value">0%</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="control-label">Total:</span>
+                            <span id="salida" class="output-value">0%</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="text-white mb-3">Parámetros</h4>
+                        <div class="mb-3">
+                            <label class="control-label">Kp:</label>
+                            <input type="number" id="kp" class="control-input" value="1" min="1" max="100">
+                        </div>
+                        <div class="mb-3">
+                            <label class="control-label">Ki:</label>
+                            <input type="number" id="ki" class="control-input" value="1" min="1" max="100">
+                        </div>
+                        <div class="mb-3">
+                            <label class="control-label">Kd:</label>
+                            <input type="number" id="kd" class="control-input" value="1" min="1" max="100">
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="text-white mb-3">Configuración</h4>
+                        <div class="mb-3">
+                            <label class="control-label">Set Point:</label>
+                            <input type="number" id="setPoint" class="control-input" value="27" min="1" max="100">
+                        </div>
+                        <div class="mb-3">
+                            <label class="control-label">T. Ambiente:</label>
+                            <input type="number" id="TAmbiente" class="control-input" value="40" min="1" max="100">
+                        </div>
+                        <div class="mb-3">
+                            <label class="control-label">T. Mínima:</label>
+                            <input type="number" id="TMin" class="control-input" value="16" min="1" max="100">
+                        </div>
+                    </div>
+
+                    <button id="guardar" class="btn btn-primary w-100">Guardar Configuración</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cargar scripts de forma asíncrona -->
+    <script src="../../src/chart.js" defer></script>
+    <script src="./index.js" defer></script>
+</body>
+
+</html>

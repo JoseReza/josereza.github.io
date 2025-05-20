@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#222">
+    <meta name="theme-color" content="#2196f3">
     <meta name="description" content="Hoja de experiencia de José">
     <meta name="author" content="José Rosendo Soto Reza">
-    <link rel="stylesheet" href="https://josereza.github.io/src/bootstrap.css">
-    <link rel="icon" href="https://josereza.github.io/src/icon.svg">
+    <link rel="stylesheet" href="../src/bootstrap.css">
+    <link rel="stylesheet" href="../src/shared.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../src/icon.svg">
     <title>Programación</title>
 
     <div id="navbar"></div>
-    <script src="https://josereza.github.io/navbar.js"></script>
+    <script src="../navbar.js"></script>
     <script type="text/javascript">
          function	function1(){ document.getElementById("navbarColor01").classList.toggle('show');}
     </script>
@@ -19,87 +21,108 @@
   </head>
 
   <body>
+    <div id="background-image"></div>
+    
+    <div class="container">
+        <div class="card">
+            <div class="text-center">
+                <img class="skill-icon" src="../src/programacion.png" alt="Programación">
+                <h2 class="section-title">Programación</h2>
+            </div>
 
-    <div class="jumbotron" style="margin-top: 10%;">
-      <img class="img-fluid rounded p-3" width="200" src="https://josereza.github.io/src/programacion.png">
-        <h2>Programacion</h2>
-        <hr class="my-4">
-      </div>
-  
-      <div class="text-center text-white bg-dark p-6 rounded">
-      <table class="table  text-white bg-primary rounded text-center p-6">
-          <tr>
-            <td class="bg-dark">Tipos de programación</td><td>
-                                                <br>&nbsp;Programación sincrona
-                                                <br>&nbsp;Programación asincrona
-                                                <br>&nbsp;Programación Orientada a objetos
-                                                <br>&nbsp;Programación modular
-                                                <br>
-                                                </td>
-          </tr>
-  
-          <tr>
-            <td class="bg-dark">Aplicaciones</td><td>                                
-                                                          <br>&nbsp;Desarrollo de interfaces de usuario(Comunicación Hombre-Máquina)
-                                                          <br>&nbsp;Comunciación Máquina-Máquina (M2M)
-                                                          <br>&nbsp;Procesamiento de señales
-                                                          <br>&nbsp;Control y monitoreo de hardware
-                                                          <br>
-                                                         </td>
-          </tr>
-          
-          <tr>
-            <td class="bg-dark">Lenguajes</td><td>                
-                                            <br>&nbsp;C++
-                                            <br>&nbsp;Javascript
-                                            <br>&nbsp;Typescript
-                                            <br>&nbsp;Html
-                                            <br>&nbsp;Css
-                                            <br>&nbsp;Python
-                                            <br>
-                                            </td>
-          </tr>
+            <div class="card">
+                <table class="skill-table">
+                    <tr>
+                        <td class="bg-dark">Tipos de programación</td>
+                        <td>
+                            <ul class="list-unstyled mb-0">
+                                <li>Programación sincrónica</li>
+                                <li>Programación asincrónica</li>
+                                <li>Programación Orientada a objetos</li>
+                                <li>Programación modular</li>
+                            </ul>
+                        </td>
+                    </tr>
 
-          <tr>
-            <td class="bg-dark">Frameworks</td><td>                
-                                            <br>&nbsp;Angular
-                                            <br>&nbsp;Vue
-                                            <br>&nbsp;React
-                                            <br>
-                                            </td>
-          </tr>
-  
-          <tr>
-            <td class="bg-dark">Entornos de desarrollo integrado</td><td>                
-                                                        <br>&nbsp;Visual Studio Code
-                                                        <br>&nbsp;Arduino IDE
-                                                        <br>&nbsp;DEV C++
-                                                        <br>&nbsp;Node-Red
-                                                        </td>
-          </tr>
-  
-          <tr>
-            <td class="bg-dark">Sistemas operativos</td><td>                
-                                                        <br>&nbsp;Windows
-                                                        <br>&nbsp;Raspbian
-                                                        <br>&nbsp;Ubuntu
-                                                        <br>
-                                                        </td>
-          </tr>
-          <tr>
-            <td class="bg-dark">Hardware unión software</td><td>                
-                                                            <br>&nbsp;Computador común
-                                                            <br>&nbsp;Arduino Uno, Mega, Nano, Leonardo
-                                                            <br>&nbsp;Esp32, Esp8266, Esp32 Cam, Esp01
-                                                            <br>&nbsp;Raspberry Pi 3, 4, zero, zero w
-                                                            <br>&nbsp;BeagleBone Black
-                                                            <br>Pic 16f886
-                                                            </td>
-          </tr>
-      </table>
+                    <tr>
+                        <td class="bg-dark">Aplicaciones</td>
+                        <td>
+                            <ul class="list-unstyled mb-0">
+                                <li>Desarrollo de interfaces de usuario (Comunicación Hombre-Máquina)</li>
+                                <li>Comunicación Máquina-Máquina (M2M)</li>
+                                <li>Procesamiento de señales</li>
+                                <li>Control y monitoreo de hardware</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="bg-dark">Lenguajes</td>
+                        <td>
+                            <ul class="list-unstyled mb-0">
+                                <li>C++</li>
+                                <li>Javascript</li>
+                                <li>Typescript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>Python</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="bg-dark">Frameworks</td>
+                        <td>
+                            <ul class="list-unstyled mb-0">
+                                <li>Angular</li>
+                                <li>Vue</li>
+                                <li>React</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="bg-dark">Entornos de desarrollo integrado</td>
+                        <td>
+                            <ul class="list-unstyled mb-0">
+                                <li>Visual Studio Code</li>
+                                <li>Arduino IDE</li>
+                                <li>DEV C++</li>
+                                <li>Node-Red</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="bg-dark">Sistemas operativos</td>
+                        <td>
+                            <ul class="list-unstyled mb-0">
+                                <li>Windows</li>
+                                <li>Raspbian</li>
+                                <li>Ubuntu</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="bg-dark">Hardware unión software</td>
+                        <td>
+                            <ul class="list-unstyled mb-0">
+                                <li>Computador común</li>
+                                <li>Arduino Uno, Mega, Nano, Leonardo</li>
+                                <li>ESP32, ESP8266, ESP32 Cam, ESP01</li>
+                                <li>Raspberry Pi 3, 4, zero, zero w</li>
+                                <li>BeagleBone Black</li>
+                                <li>PIC 16f886</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 
-    <script src="https://josereza.github.io/buttons.js"></script>
+    <script src="../buttons.js"></script>
     
   </body>
 </html>

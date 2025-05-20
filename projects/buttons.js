@@ -1,37 +1,65 @@
-var btn_controlador_pid = document.getElementById("btn-controlador_pid");
-var btn_plc_node = document.getElementById("btn-plc-node");
-var btn_investigacion_iiot = document.getElementById("btn-investigacion-iiot");
-var btn_curso_node_red = document.getElementById("btn-curso-node-red");
-var btn_maquina_soldadora = document.getElementById("btn-maquina-soldadora");
-var btn_music_software = document.getElementById("btn-music-software");
-var btn_3d_software = document.getElementById("btn-3d-software");
+// Función específica para la navegación de proyectos
+function navigateToProject(projectPath) {
+    window.location.href = projectPath;
+}
 
-btn_3d_software.addEventListener('click', function(){
-    window.open("https://josereza.github.io/3d-software/src/")
-})
+// Navegación a proyectos específicos
+document.addEventListener('DOMContentLoaded', function() {
+    // PLC Node
+    const btnPlcNode = document.getElementById("btn-plc-node");
+    if (btnPlcNode) {
+        btnPlcNode.addEventListener("click", () => {
+            navigateToProject("plc-node/index.html");
+        });
+    }
 
-btn_music_software.addEventListener('click', function(){
-    window.open("https://josereza.github.io/music-software/src/")
-})
+    // Investigación IIoT
+    const btnInvestigacionIiot = document.getElementById("btn-investigacion-iiot");
+    if (btnInvestigacionIiot) {
+        btnInvestigacionIiot.addEventListener("click", () => {
+            navigateToProject("investigacion-iiot/index.html");
+        });
+    }
 
-btn_controlador_pid.addEventListener('click', function(){
-    window.open("./controlador_pid/index.html")
-})
+    // Máquina soldadora
+    const btnMaquinaSoldadora = document.getElementById("btn-maquina-soldadora");
+    if (btnMaquinaSoldadora) {
+        btnMaquinaSoldadora.addEventListener("click", () => {
+            navigateToProject("maquina-soldadora/index.html");
+        });
+    }
 
-btn_plc_node.addEventListener('click', function(){
-    window.open("https://plcnode.github.io/PlcNode/")
-})
+    // Curso Node-RED
+    const btnCursoNodeRed = document.getElementById("btn-curso-node-red");
+    if (btnCursoNodeRed) {
+        btnCursoNodeRed.addEventListener("click", () => {
+            navigateToProject("curso-node-red/index.html");
+        });
+    }
 
-btn_investigacion_iiot.addEventListener('click', function(){
-    window.open("./investigacion_iiot/index.html")
-})
+    // Controlador PID
+    const btnControladorPid = document.getElementById("btn-controlador_pid");
+    if (btnControladorPid) {
+        btnControladorPid.addEventListener("click", () => {
+            navigateToProject("controlador-pid/index.html");
+        });
+    }
 
-btn_curso_node_red.addEventListener('click', function(){
-    window.open("./curso_node_red/index.html")
-})
+    // Software de música
+    const btnMusicSoftware = document.getElementById("btn-music-software");
+    if (btnMusicSoftware) {
+        btnMusicSoftware.addEventListener("click", () => {
+            navigateToProject("music-software/index.html");
+        });
+    }
 
-btn_maquina_soldadora.addEventListener('click', function(){
-    window.open("./maquina_soldadora/index.html")
-})
+    // Software 3D
+    const btn3dSoftware = document.getElementById("btn-3d-software");
+    if (btn3dSoftware) {
+        btn3dSoftware.addEventListener("click", () => {
+            navigateToProject("3d-software/index.html");
+        });
+    }
+});
 
 
