@@ -57,6 +57,11 @@ navbar.innerHTML = `
                 <a class="nav-link" href="${basePath}images/index.html">Imágenes</a>
             </li>
         </ul>
+        <div class="navbar-nav ml-auto">
+            <button class="btn btn-outline-light btn-sm" onclick="logout()" style="margin-left: 1rem;">
+                Cerrar Sesión
+            </button>
+        </div>
     </div>
 </nav>
 `;

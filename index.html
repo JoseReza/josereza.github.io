@@ -30,8 +30,25 @@
 </head>
 
 <body>
+  <!-- Modal de autenticación -->
+  <div id="authModal" class="auth-modal">
+    <div class="auth-modal-content">
+      <div class="auth-header">
+        <h2>Acceso Restringido</h2>
+        <p>Ingresa la contraseña para ver el contenido</p>
+      </div>
+      <form id="authForm" class="auth-form">
+        <div class="form-group">
+          <input type="password" id="passwordInput" placeholder="Contraseña" required>
+          <button type="submit" class="btn btn-primary auth-btn">Acceder</button>
+        </div>
+        <div id="errorMessage" class="error-message"></div>
+      </form>
+    </div>
+  </div>
+
   <div id="background-image"></div>
-  <div class="container">
+  <div id="mainContent" class="container" style="display: none;">
     <div class="card" style="margin-top: 8rem;">
       <div class="text-center">
         <img class="profile-img" src="./images/0.jpg" alt="José Rosendo Soto Reza">
@@ -193,6 +210,7 @@
   </div>
 
   <script src="./buttons.js"></script>
+  <script src="./auth.js"></script>
 </body>
 
 </html>
