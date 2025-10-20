@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
   // Configure for GitHub Pages root domain
   basePath: "",
   assetPrefix: "",
+  // Force relative paths for static assets
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
