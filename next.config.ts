@@ -1,0 +1,15 @@
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  // Enable static HTML export suitable for GitHub Pages
+  output: "export",
+  // If deploying to a project subpath like /my-portfolio, set basePath and assetPrefix.
+  // For user/organization pages (username.github.io) leave these empty.
+  // basePath: "/my-portfolio",
+  // assetPrefix: "/my-portfolio/",
+  images: {
+    unoptimized: true,
+  },
+};
+
+export default nextConfig;

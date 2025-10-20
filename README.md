@@ -1,48 +1,40 @@
-# Portfolio Personal
+This is a [Next.js](https://nextjs.org) static portfolio configured for export to GitHub Pages.
 
-Este es mi portfolio personal que muestra mis proyectos y habilidades en programación, electrónica, mecánica y comunicaciones.
+## Getting Started
 
-## Despliegue en GitHub Pages
+First, run the development server:
 
-El sitio está configurado para desplegarse automáticamente en GitHub Pages cuando se hace push a la rama principal.
-
-### Configuración
-
-1. Asegúrate de que tu repositorio esté en GitHub
-2. Ve a Settings > Pages
-3. En "Source", selecciona "Deploy from a branch"
-4. En "Branch", selecciona "gh-pages" y la carpeta "/ (root)"
-5. Guarda los cambios
-
-### Estructura del Proyecto
-
-```
-.
-├── src/                  # Archivos de estilos y recursos compartidos
-├── projects/            # Proyectos individuales
-├── electronics/         # Sección de electrónica
-├── mecanics/           # Sección de mecánica
-├── programming/        # Sección de programación
-├── communications/     # Sección de comunicaciones
-├── certifications/     # Certificaciones
-└── images/            # Imágenes del portfolio
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### Tecnologías Utilizadas
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap
-- GitHub Pages
+You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
 
-## Desarrollo Local
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Para ejecutar el sitio localmente:
+## Learn More
 
-1. Clona el repositorio
-2. Abre el archivo `index.html` en tu navegador
+To learn more about Next.js, take a look at the following resources:
 
-## Contribuciones
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Las contribuciones son bienvenidas. Por favor, abre un issue para discutir los cambios propuestos. 
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Static Export and GitHub Pages
+
+Build and export to `out/`:
+
+```bash
+npm run build
+```
+
+Then publish the `out/` folder to GitHub Pages. If deploying under a subpath (repo page), set `basePath` and `assetPrefix` in `next.config.ts`.
