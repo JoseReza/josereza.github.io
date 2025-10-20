@@ -5,10 +5,9 @@ const nextConfig: NextConfig = {
   output: "export",
   // Output to docs folder for GitHub Pages
   distDir: "docs",
-  // If deploying to a project subpath like /my-portfolio, set basePath and assetPrefix.
-  // For user/organization pages (username.github.io) leave these empty.
-  // basePath: "/my-portfolio",
-  // assetPrefix: "/my-portfolio/",
+  // Configure for GitHub Pages root domain
+  basePath: "",
+  assetPrefix: "",
   images: {
     unoptimized: true,
   },
