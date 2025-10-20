@@ -1,6 +1,26 @@
 const fs = require('fs');
 const path = require('path');
 
+// Copy directories recursively
+function copyDir(src, dest) {
+  if (!fs.existsSync(dest)) {
+    fs.mkdirSync(dest, { recursive: true });
+  }
+  
+  const entries = fs.readdirSync(src, { withFileTypes: true });
+  
+  for (let entry of entries) {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
+    
+    if (entry.isDirectory()) {
+      copyDir(srcPath, destPath);
+    } else {
+      fs.copyFileSync(srcPath, destPath);
+    }
+  }
+}
+
 // Fix absolute paths in HTML files
 function fixPaths(dir) {
   const files = fs.readdirSync(dir);
@@ -29,6 +49,17 @@ function fixPaths(dir) {
       console.log(`Fixed paths in: ${filePath}`);
     }
   });
+}
+
+// Copy necessary directories to docs
+console.log('Copying public assets...');
+if (fs.existsSync('./public')) {
+  copyDir('./public', './docs');
+}
+
+// Copy _next directory if it exists
+if (fs.existsSync('./.next/static')) {
+  copyDir('./.next/static', './docs/_next/static');
 }
 
 // Run the fix

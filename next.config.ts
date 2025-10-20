@@ -5,9 +5,6 @@ const nextConfig: NextConfig = {
   output: "export",
   // Output to docs folder for GitHub Pages
   distDir: "docs",
-  // Disable Next.js routing for static export
-  skipTrailingSlashRedirect: true,
-  skipMiddlewareUrlNormalize: true,
   // Force relative paths for static assets
   trailingSlash: true,
   images: {
@@ -20,6 +17,10 @@ const nextConfig: NextConfig = {
   typescript: {
     // Do not block builds on TS errors
     ignoreBuildErrors: true,
+  },
+  webpack: (config) => {
+    config.output.publicPath = './';
+    return config;
   },
 };
 

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack && node fix-paths.js",
+    "build": "next build && node fix-paths.js",
     "start": "next start",
     "lint": "eslint",
     "serve:static": "npx serve docs"
