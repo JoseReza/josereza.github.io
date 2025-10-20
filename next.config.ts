@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Enable static HTML export suitable for GitHub Pages
   output: "export",
+  // Output to docs folder for GitHub Pages
+  distDir: "docs",
   // If deploying to a project subpath like /my-portfolio, set basePath and assetPrefix.
   // For user/organization pages (username.github.io) leave these empty.
   // basePath: "/my-portfolio",
