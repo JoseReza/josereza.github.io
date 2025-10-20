@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
   output: "export",
   // Change output directory from 'out' to 'docs'
   distDir: "docs",
+  // Enable client-side JavaScript for static export
+  trailingSlash: true,
   // If deploying to a project subpath like /my-portfolio, set basePath and assetPrefix.
   // For user/organization pages (username.github.io) leave these empty.
   // basePath: "/my-portfolio",
