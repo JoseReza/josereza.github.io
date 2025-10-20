@@ -2,23 +2,33 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main  # o master, dependiendo de tu rama principal
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
+      - name: Checkout
+        uses: actions/checkout@v4
+        
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
-
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build
+        run: npm run build
+        
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
         with:
-          folder: .  # La carpeta que contiene tu sitio
-          branch: gh-pages  # La rama donde se desplegará 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
