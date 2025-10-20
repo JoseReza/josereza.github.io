@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  basePath: "/out",
   // Enable static HTML export suitable for GitHub Pages
   output: "export",
   // If deploying to a project subpath like /my-portfolio, set basePath and assetPrefix.
