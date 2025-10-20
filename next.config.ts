@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  basePath: "/docs",
   // Enable static HTML export suitable for GitHub Pages
   output: "export",
   // Change output directory from 'out' to 'docs'
