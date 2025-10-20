@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build --turbopack && node fix-paths.js",
     "start": "next start",
     "lint": "eslint",
-    "serve:static": "npx serve out"
+    "serve:static": "npx serve docs"
   },
   "dependencies": {
     "react": "19.1.0",
