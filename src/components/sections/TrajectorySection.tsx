@@ -14,7 +14,7 @@ const items: Item[] = [
     org: 'Fletes México',
     role: 'Ingeniero en sistemas desarrollador',
     start: 'Ago 2024',
-    end: 'Actualidad',
+    end: 'Ago 2025',
     manager: 'Ramon Aguayo (Gerente de sistemas)',
   },
   {

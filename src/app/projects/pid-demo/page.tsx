@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 
@@ -24,6 +24,7 @@ export default function PidDemoPage() {
   const integralRef = useRef<number>(0);
   const prevErrRef = useRef<number>(0);
   const lastTsRef = useRef<number>(performance.now());
+  const animationRef = useRef<number>(0);
 
   // Simple first-order process model with noise: x' = -a x + b u + noise
   const a = 1.2; // natural decay
@@ -31,49 +32,81 @@ export default function PidDemoPage() {
 
   // Start/stop loop
   useEffect(() => {
-    if (!running) return;
-    let raf = 0;
+    if (!running) {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = 0;
+      }
+      return;
+    }
+
     const step = () => {
       const now = performance.now();
       const dt = Math.max(1, now - lastTsRef.current) / 1000; // seconds
       const period = 1 / sampleHz;
-      const needsTick = dt >= period || history.length === 0;
-      if (needsTick) {
+      
+      if (dt >= period) {
         lastTsRef.current = now;
-        // PID control
-        const err = setpoint - pv;
-        integralRef.current += err * period;
-        const derr = (err - prevErrRef.current) / period;
-        const ctrl = pid.kp * err + pid.ki * integralRef.current + pid.kd * derr;
-        prevErrRef.current = err;
-        // Saturation
-        const uSat = Math.max(-100, Math.min(100, ctrl));
-        setU(uSat);
-        // Process evolve
-        const noise = (Math.random() - 0.5) * 0.6;
-        const nextPv = pv + (-a * pv + b * uSat) * period + noise;
-        setPv(nextPv);
-        setHistory((h) => {
-          const next = [...h, { t: now, pv: nextPv, sp: setpoint, u: uSat }];
-          return next.length > maxPoints ? next.slice(next.length - maxPoints) : next;
+        
+        // Get current state values
+        setPv((currentPv) => {
+          // PID control
+          const err = setpoint - currentPv;
+          integralRef.current += err * period;
+          const derr = (err - prevErrRef.current) / period;
+          const ctrl = pid.kp * err + pid.ki * integralRef.current + pid.kd * derr;
+          prevErrRef.current = err;
+          
+          // Saturation
+          const uSat = Math.max(-100, Math.min(100, ctrl));
+          setU(uSat);
+          
+          // Process evolve
+          const noise = (Math.random() - 0.5) * 0.6;
+          const nextPv = currentPv + (-a * currentPv + b * uSat) * period + noise;
+          
+          // Update history
+          setHistory((h) => {
+            const next = [...h, { t: now, pv: nextPv, sp: setpoint, u: uSat }];
+            return next.length > maxPoints ? next.slice(next.length - maxPoints) : next;
+          });
+          
+          return nextPv;
         });
       }
-      raf = requestAnimationFrame(step);
+      
+      animationRef.current = requestAnimationFrame(step);
     };
-    raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
-  }, [running, sampleHz, pid, setpoint, pv, history.length]);
+    
+    animationRef.current = requestAnimationFrame(step);
+    
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = 0;
+      }
+    };
+  }, [running, sampleHz, pid.kp, pid.ki, pid.kd, setpoint]);
 
   // Reset simulation
-  const handleReset = () => {
+  const handleReset = useCallback(() => {
     setRunning(false);
+    if (animationRef.current) {
+      cancelAnimationFrame(animationRef.current);
+      animationRef.current = 0;
+    }
     integralRef.current = 0;
     prevErrRef.current = 0;
     setPv(0);
     setU(0);
     setHistory([]);
     lastTsRef.current = performance.now();
-  };
+  }, []);
+
+  // Toggle running state
+  const handleToggleRunning = useCallback(() => {
+    setRunning(prev => !prev);
+  }, []);
 
   // Build SVG paths
   const { width, height, pad } = { width: 700, height: 340, pad: 48 };
@@ -127,8 +160,33 @@ export default function PidDemoPage() {
             <div style={{ opacity: 0.8 }}>{sampleHz} Hz</div>
           </div>
           <div style={{ display: 'flex', gap: 8, alignItems: 'end' }}>
-            <button onClick={() => setRunning((r) => !r)} style={{ padding: '8px 12px', borderRadius: 6, border: '1px solid var(--card-border)', background: 'var(--hover-bg)', cursor: 'pointer' }}>{running ? 'Pausar' : 'Iniciar'}</button>
-            <button onClick={handleReset} style={{ padding: '8px 12px', borderRadius: 6, border: '1px solid var(--card-border)', background: 'var(--hover-bg)', cursor: 'pointer' }}>Reset</button>
+            <button 
+              onClick={handleToggleRunning} 
+              style={{ 
+                padding: '8px 12px', 
+                borderRadius: 6, 
+                border: '1px solid var(--card-border)', 
+                background: running ? 'var(--error-color, #ef4444)' : 'var(--success-color, #10b981)', 
+                color: 'white',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              {running ? 'Pausar' : 'Iniciar'}
+            </button>
+            <button 
+              onClick={handleReset} 
+              style={{ 
+                padding: '8px 12px', 
+                borderRadius: 6, 
+                border: '1px solid var(--card-border)', 
+                background: 'var(--hover-bg)', 
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              Reset
+            </button>
           </div>
         </div>
       </section>
