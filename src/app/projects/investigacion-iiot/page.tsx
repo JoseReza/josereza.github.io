@@ -1,7 +1,6 @@
 'use client';
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function InvestigacionIIoTPage() {
   return (
@@ -61,7 +60,7 @@ export default function InvestigacionIIoTPage() {
         </ul>
       </section>
 
-      {/* Galería (Carousel) */}
+      {/* Galería */}
       <section style={{
         background: "var(--card-bg)",
         border: "1px solid var(--card-border)",
@@ -71,68 +70,40 @@ export default function InvestigacionIIoTPage() {
         marginBottom: 24
       }}>
         <h2 style={{ marginBottom: 12 }}>Galería</h2>
-        {(() => {
-          const images = Array.from({ length: 18 }, (_, i) => `/images/investigacion-iiot/d${i + 1}.png`);
-          const [index, setIndex] = useState(0);
-          const go = (delta: number) => setIndex((prev) => (prev + delta + images.length) % images.length);
-
-          useEffect(() => {
-            const onKey = (e: KeyboardEvent) => {
-              if (e.key === 'ArrowLeft') go(-1);
-              if (e.key === 'ArrowRight') go(1);
-            };
-            window.addEventListener('keydown', onKey);
-            return () => window.removeEventListener('keydown', onKey);
-          }, []);
-
-          return (
-            <div>
-              <div style={{ position: "relative", border: "1px solid var(--card-border)", borderRadius: 12, overflow: "hidden" }}>
-                <button aria-label="Anterior" onClick={() => go(-1)} style={{
-                  position: "absolute", left: 8, top: "50%", transform: "translateY(-50%)",
-                  background: "var(--hover-bg)", color: "var(--text-color)", border: "1px solid var(--card-border)", borderRadius: 999,
-                  width: 36, height: 36, cursor: "pointer"
-                }}>{'‹'}</button>
-                <img src={images[index]} alt={`d${index + 1}.png`} style={{ width: "100%", height: "auto", display: "block" }} />
-                <button aria-label="Siguiente" onClick={() => go(1)} style={{
-                  position: "absolute", right: 8, top: "50%", transform: "translateY(-50%)",
-                  background: "var(--hover-bg)", color: "var(--text-color)", border: "1px solid var(--card-border)", borderRadius: 999,
-                  width: 36, height: 36, cursor: "pointer"
-                }}>{'›'}</button>
-              </div>
-
-              <div style={{ display: "flex", justifyContent: "center", gap: 6, marginTop: 12, flexWrap: "wrap" }}>
-                {images.map((_, i) => (
-                  <button
-                    key={i}
-                    aria-label={`Ir a imagen ${i + 1}`}
-                    onClick={() => setIndex(i)}
-                    style={{
-                      width: 8, height: 8, borderRadius: 999,
-                      background: i === index ? "var(--text-color)" : "var(--card-border)",
-                      border: "none", cursor: "pointer"
-                    }}
-                  />
-                ))}
-              </div>
-
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(90px, 1fr))", gap: 8, marginTop: 12 }}>
-                {images.map((src, i) => (
-                  <img
-                    key={src}
-                    src={src}
-                    alt={`miniatura d${i + 1}.png`}
-                    onClick={() => setIndex(i)}
-                    style={{
-                      width: "100%", height: 64, objectFit: "cover", borderRadius: 8,
-                      border: i === index ? "2px solid var(--text-color)" : "1px solid var(--card-border)", cursor: "pointer"
-                    }}
-                  />
-                ))}
-              </div>
+        <div style={{ 
+          display: "flex", 
+          flexDirection: "column",
+          gap: 16,
+          marginTop: 12 
+        }}>
+          {Array.from({ length: 18 }, (_, i) => (
+            <div key={i} style={{
+              background: "var(--hover-bg)",
+              border: "1px solid var(--card-border)",
+              borderRadius: 8,
+              padding: 12,
+              textAlign: "center"
+            }}>
+              <img 
+                src={`/images/investigacion-iiot/d${i + 1}.png`} 
+                alt={`Diapositiva ${i + 1}`}
+                style={{ 
+                  width: "100%", 
+                  height: "auto", 
+                  borderRadius: 6,
+                  marginBottom: 8
+                }} 
+              />
+              <p style={{ 
+                fontSize: 12, 
+                opacity: 0.7, 
+                margin: 0 
+              }}>
+                Diapositiva {i + 1}
+              </p>
             </div>
-          );
-        })()}
+          ))}
+        </div>
       </section>
 
       <section style={{
@@ -187,6 +158,62 @@ export default function InvestigacionIIoTPage() {
           <li>Pruebas comparativas de sensores, conectividad y formato de datos.</li>
           <li>Base funcional para escalamiento a soluciones productivas.</li>
         </ul>
+      </section>
+
+      {/* Documento PDF */}
+      <section style={{
+        background: "var(--card-bg)",
+        border: "1px solid var(--card-border)",
+        borderRadius: 12,
+        padding: 24,
+        boxShadow: "0 2px 4px var(--shadow)",
+        marginBottom: 24
+      }}>
+        <h2 style={{ marginBottom: 12 }}>Documento Completo</h2>
+        <p style={{ marginBottom: 16, opacity: 0.8 }}>
+          Accede al documento PDF completo de la investigación IIoT con todos los detalles técnicos y resultados.
+        </p>
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+          <a 
+            href="/images/investigacion-iiot/documento.pdf" 
+            target="_blank" 
+            rel="noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "12px 16px",
+              background: "var(--hover-bg)",
+              border: "1px solid var(--card-border)",
+              borderRadius: 8,
+              color: "var(--text-color)",
+              textDecoration: "none",
+              fontSize: 14,
+              fontWeight: 500
+            }}
+          >
+            📄 Ver PDF
+          </a>
+          <a 
+            href="/images/investigacion-iiot/documento.pdf" 
+            download="investigacion-iiot-documento.pdf"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "12px 16px",
+              background: "var(--text-color)",
+              color: "var(--background)",
+              border: "none",
+              borderRadius: 8,
+              textDecoration: "none",
+              fontSize: 14,
+              fontWeight: 500
+            }}
+          >
+            ⬇️ Descargar PDF
+          </a>
+        </div>
       </section>
 
       <p style={{ fontSize: 12, opacity: 0.7 }}>
