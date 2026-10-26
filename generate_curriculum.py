@@ -30,6 +30,17 @@ from reportlab.platypus import (
 ROOT = Path(__file__).resolve().parent
 PORTFOLIO_PASSWORD = "borboleta.123"
 PHOTO_PATH = ROOT / "images" / "0.jpg"
+
+
+def portfolio_url(path: str = "/") -> str:
+    """Portfolio link with password query so the gate auto-unlocks."""
+    base = "https://josereza.github.io"
+    if path.startswith("http"):
+        url = path
+    else:
+        url = base + (path if path.startswith("/") else "/" + path)
+    sep = "&" if "?" in url else "?"
+    return f"{url}{sep}password={PORTFOLIO_PASSWORD}"
 PHOTO_SIZE_PX = 360
 GALLERY_SPECS = [
     # path relative to images/, caption keys live in CONTENT
@@ -270,13 +281,13 @@ CONTENT = {
             },
             {
                 "title": "Tire System — Migración Web",
-                "link": "https://josereza.github.io/projects/sistema-llantas/",
+                "link": portfolio_url("/projects/sistema-llantas/"),
                 "blurb": "Migración MS-DOS → arquitectura web moderna (backend, frontend, APIs).",
                 "tags": ["Fullstack", "Migración", "APIs"],
             },
             {
                 "title": "IoT Soldadora + Investigación IIoT",
-                "link": "https://josereza.github.io/projects/conectividad-maquina-soldadora/",
+                "link": portfolio_url("/projects/conectividad-maquina-soldadora/"),
                 "blurb": "IoT a soldadora por puntos (control web, M2M) e investigación IIoT industrial.",
                 "tags": ["IoT", "Telecom", "IIoT", "Web"],
             },
@@ -301,7 +312,7 @@ CONTENT = {
             "<b>Jr. Software Engineer:</b> fullstack (JS/TS, React, Node, Python), REST y entrega "
             "de producto de punta a punta."
         ),
-        "footer": f"Portafolio: https://josereza.github.io/  ·  Contraseña: {PORTFOLIO_PASSWORD}",
+        "footer": f"Portafolio: {portfolio_url('/')}  ·  Contraseña: {PORTFOLIO_PASSWORD}",
     },
     "en": {
         "name_lines": ["José Rosendo", "Soto Reza"],
@@ -397,13 +408,13 @@ CONTENT = {
             },
             {
                 "title": "Tire System — Web Migration",
-                "link": "https://josereza.github.io/projects/sistema-llantas/",
+                "link": portfolio_url("/projects/sistema-llantas/"),
                 "blurb": "MS-DOS to modern web architecture migration (backend, frontend, APIs).",
                 "tags": ["Fullstack", "Migration", "APIs"],
             },
             {
                 "title": "IoT Welder + IIoT Research",
-                "link": "https://josereza.github.io/projects/conectividad-maquina-soldadora/",
+                "link": portfolio_url("/projects/conectividad-maquina-soldadora/"),
                 "blurb": "IoT spot-welder connectivity (web control, M2M) plus industrial IIoT research.",
                 "tags": ["IoT", "Telecom", "IIoT", "Web"],
             },
@@ -428,7 +439,7 @@ CONTENT = {
             "<b>Jr. Software Engineer:</b> fullstack (JS/TS, React, Node, Python), REST APIs, "
             "and end-to-end product delivery."
         ),
-        "footer": f"Portfolio: https://josereza.github.io/  ·  Password: {PORTFOLIO_PASSWORD}",
+        "footer": f"Portfolio: {portfolio_url('/')}  ·  Password: {PORTFOLIO_PASSWORD}",
     },
 }
 
